@@ -1,0 +1,174 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_details",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_time",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			}
+		],
+		"name": "createTask",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deleteAllTasks",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteTask",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_details",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_time",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			}
+		],
+		"name": "updateTask",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewAllTasks",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "details",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					}
+				],
+				"internalType": "struct TodoList.Task[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "viewTask",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "details",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					}
+				],
+				"internalType": "struct TodoList.Task",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
