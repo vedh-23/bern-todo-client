@@ -1,37 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {createBrowserRouter,RouterProvider} from 'react-router-dom'
-import Createtask from './pages/createtask'
-import Deletetask from './pages/deletetask'
-import Updatetask from './pages/updatetask'
-import Viewalltask from './pages/viewalltask'
-import Wallet from './pages/wallet'
-import Viewtask from './pages/viewtask'
+import { useState } from "react";
 
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Wallet from "./pages/wallet";
+
+import TodoApp from "./pages/viewalltask";
 
 function App() {
-  const[state,setstate]=useState({web3:null,contract:null,account:null});
-  const savestate=({web3,contract,account})=>{
-    setstate({web3:web3,contract:contract,account:account});
-  }
+  const [state, setstate] = useState({
+    provider: null,
+    signer: null,
+    Contract: null,
+    readOnlyContract: null,
+  });
+  const saveState = ({ provider, signer, Contract, readOnlyContract }) => {
+    setstate({
+      provider: provider,
+      signer: signer,
+      Contract: Contract,
+      readOnlyContract: readOnlyContract,
+    });
+  };
   const router = createBrowserRouter([
-    {path:'/',element:<Wallet savestate={savestate}/>},
-    {path:'/createtask',element:<Createtask state={state}/>},
-    {path:'/view-all-task',element:<Viewalltask />},
-    {path:'/deletetask',element:<Deletetask state={state}/>},
-    {path:'/updatetask',element:<Updatetask state={state}/>},
-    {path:'/viewtask',element:<Viewtask/>}
-    
-  ])
-  
+    { path: "/", element: <Wallet saveState={saveState} /> },
+
+    { path: "/view-all-task", element: <TodoApp state={state} /> },
+  ]);
 
   return (
     <>
       <RouterProvider router={router}></RouterProvider>
+      <p className="text-red-600">I am red</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
